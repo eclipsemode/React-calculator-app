@@ -15,13 +15,74 @@
     padding: 20px;
 }
 
+.calc--night {
+    background: #222E2D;
+}
+
+.calc__settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calc__menu {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.calc--night .calc__menu {
+    color: white;
+}
+
+.calc__option {
+    background: teal;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    color: white;
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.calc--night .calc__option {
+    background: white;
+    color: teal;
+}
+
+.calc__option:hover {
+    opacity: 0.6;
+}
+
+.calc__mode {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.calc--night .calc__mode {
+    color: white;
+}
+
 .calc__display {
     min-height: 130px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     font-family: sans-serif;
+    justify-content: space-around;
+}
 
+.calc--night .calc__display {
+    color: white;
+}
+
+.calc__current-value {
+    font-size: 18px;
+}
+
+.calc__final-value {
+    font-size: 24px;
 }
 
 .calc__buttons {
@@ -44,14 +105,36 @@
     color: darkgrey;
 }
 
+.calc--night .calc__btn {
+    color: white;
+}
+
+.calc__btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
 .calc__btn-remove {
     color: black;
+}
+
+.calc--night .calc__btn-remove {
+    color: white;
+    background: #667777;
+}
+
+.calc--night .calc__btn-remove:hover {
+    background: rgba(102, 119, 119, 0.8);;
 }
 
 .calc__btn-operators {
     color: teal;
 }
 
-.calc__btn:hover {
-    background: rgba(0, 0, 0, 0.1);
+.calc--night .calc__btn-operators {
+    color: teal;
+    background: white;
+}
+
+.calc--night .calc__btn-operators:hover {
+    background: rgba(255, 255, 255, 0.8);
 }
