@@ -102,24 +102,18 @@ const Buttons = (props) => {
         },
         {
             id: 17,
-            display: '()',
-            className: 'calc__btn calc__btn-additional',
-            action: 'bracket'
-        },
-        {
-            id: 18,
             display: '0',
-            className: 'calc__btn',
+            className: 'calc__btn calc__btn-zero',
             action: 'add'
         },
         {
-            id: 19,
+            id: 18,
             display: '.',
             className: 'calc__btn calc__btn-additional',
             action: 'add'
         },
         {
-            id: 20,
+            id: 19,
             display: '=',
             className: 'calc__btn calc__btn-operators',
             action: 'calc'
