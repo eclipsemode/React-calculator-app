@@ -1,116 +1,140 @@
 import React from 'react';
 import {FiDelete} from "react-icons/fi";
-import {CgMathDivide, CgMathEqual, CgMathMinus, CgMathPercent, CgMathPlus} from "react-icons/cg";
-import {AiOutlineClose} from "react-icons/ai";
 
-const Buttons = () => {
+const Buttons = (props) => {
+
     const buttons = [
         {
             id: 1,
             display: 'AC',
-            className: 'calc__btn calc__btn-remove'
+            className: 'calc__btn calc__btn-remove',
+            action: 'removeAll'
         },
         {
             id: 2,
             display: <FiDelete />,
-            className: 'calc__btn calc__btn-remove'
+            className: 'calc__btn calc__btn-remove',
+            action: 'removeElement'
         },
         {
             id: 3,
-            display: <CgMathPercent />,
-            className: 'calc__btn calc__btn-operators'
+            display: '%',
+            className: 'calc__btn calc__btn-operators',
+            action: 'add'
         },
         {
             id: 4,
-            display: <CgMathDivide />,
-            className: 'calc__btn calc__btn-operators'
+            display: '/',
+            className: 'calc__btn calc__btn-operators',
+            action: 'add'
         },
         {
             id: 5,
             display: '7',
-            className: 'calc__btn'
+            className: 'calc__btn',
+            action: 'add'
         },
         {
             id: 6,
             display: '8',
-            className: 'calc__btn'
+            className: 'calc__btn',
+            action: 'add'
         },
         {
             id: 7,
             display: '9',
-            className: 'calc__btn'
+            className: 'calc__btn',
+            action: 'add'
         },
         {
             id: 8,
-            display: <AiOutlineClose />,
-            className: 'calc__btn calc__btn-operators'
+            display: '*',
+            className: 'calc__btn calc__btn-operators',
+            action: 'add'
         },
         {
             id: 9,
             display: '4',
-            className: 'calc__btn'
+            className: 'calc__btn',
+            action: 'add'
         },
         {
             id: 10,
             display: '5',
-            className: 'calc__btn'
+            className: 'calc__btn',
+            action: 'add'
         },
         {
             id: 11,
             display: '6',
-            className: 'calc__btn'
+            className: 'calc__btn',
+            action: 'add'
         },
         {
             id: 12,
-            display: <CgMathMinus />,
-            className: 'calc__btn calc__btn-operators'
+            display: '-',
+            className: 'calc__btn calc__btn-operators',
+            action: 'add'
         },
         {
             id: 13,
             display: '1',
-            className: 'calc__btn'
+            className: 'calc__btn',
+            action: 'add'
         },
         {
             id: 14,
             display: '2',
-            className: 'calc__btn'
+            className: 'calc__btn',
+            action: 'add'
         },
         {
             id: 15,
             display: '3',
-            className: 'calc__btn'
+            className: 'calc__btn',
+            action: 'add'
         },
         {
             id: 16,
-            display: <CgMathPlus />,
-            className: 'calc__btn calc__btn-operators'
+            display: '+',
+            className: 'calc__btn calc__btn-operators',
+            action: 'add'
         },
         {
             id: 17,
-            display: '+/-',
-            className: 'calc__btn'
+            display: '()',
+            className: 'calc__btn calc__btn-additional',
+            action: 'bracket'
         },
         {
             id: 18,
             display: '0',
-            className: 'calc__btn'
+            className: 'calc__btn',
+            action: 'add'
         },
         {
             id: 19,
             display: '.',
-            className: 'calc__btn'
+            className: 'calc__btn calc__btn-additional',
+            action: 'add'
         },
         {
             id: 20,
-            display: <CgMathEqual />,
-            className: 'calc__btn calc__btn-operators'
+            display: '=',
+            className: 'calc__btn calc__btn-operators',
+            action: 'calc'
         }
     ]
+
+    const onHandleButton = (value, action) => {
+        props.handleButton(value, action)
+
+    }
 
     return (
         <div className="calc__buttons">
             {buttons.map(btn =>
-                <button key={btn.id} className={btn.className}>
+                <button value={btn.id} key={btn.id} className={btn.className} onClick={() => onHandleButton(btn.display, btn.action)}>
                     {btn.display}
                 </button>
             )}
